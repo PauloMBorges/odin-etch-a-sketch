@@ -1,0 +1,16 @@
+// Function to create the grid 
+function createGrid() {
+    const gridSize = 16; /* 16x16 grid */
+    const totalSquares = gridSize * gridSize;
+
+    const container = document.getElementById("gridContainer");
+    
+    container.innerHTML = '' // Clear any existing content
+
+    for(let i = 0; i < totalSquares; i++) {
+        let square = document.createElement("div");
+        square.classList.add("singleSquare");
+        container.appendChild(square);
+    }
+}
+
