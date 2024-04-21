@@ -57,3 +57,8 @@ function resizeGrid() {
         alert("Please enter a valid number.");
     }
 }
+
+function clearColors() {
+    const container = document.getElementById("gridContainer");
+    container.innerHTML = ""
+}
