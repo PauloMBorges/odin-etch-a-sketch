@@ -45,14 +45,23 @@ function changeSquareColor(event) {
 }
 
 function toggleDiscoMode() {
+    const discoButton = document.getElementById("discoButton");
     discoMode = !discoMode; // discoMode = true
-    clearColors();
+
+    // disco mode button styling (it keeps the background color when toggled on)
+    if (discoMode) {
+        discoButton.style.backgroundColor = '#FF2FB9';
+        discoButton.style.color = 'white';
+    } else {
+        discoButton.style.backgroundColor = ''; // Revert to original background color
+        discoButton.style.color = ''; // Revert to original text color
+    }
+    clearColors(); // clear all colors when toggled on or off
 }
 
 document.addEventListener("DOMContentLoaded", function() {
     const gridContainer = document.getElementById("gridContainer");
     gridContainer.addEventListener('mouseover', changeSquareColor);
-    document.getElementById("discoButton").addEventListener('click', setColoredSquares);
 });
 
 // Function to resize the grid when the button is clicked
