@@ -20,6 +20,14 @@ function createGrid() {
 // Event listener to create the grid when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", createGrid);
 
+let colors = [
+    '#C724B1', // Disco Pink
+    '#711A75', // Disco Purple
+    '#B4D4B4', // Disco Green
+    '#2FB8AC', // Disco Aqua
+    '#469496'  // Disco Blue
+];
+
 let currentColor = 'black'
 // Function to change the color of a square when hovered over
 function changeSquareColor(event) {
