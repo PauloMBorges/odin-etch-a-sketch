@@ -20,19 +20,40 @@ function createGrid() {
 // Event listener to create the grid when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", createGrid);
 
+// Disco palette (will be the color when "Disco!" button is clicked)
 let colors = [
-    '#C724B1', // Disco Pink
-    '#711A75', // Disco Purple
-    '#B4D4B4', // Disco Green
-    '#2FB8AC', // Disco Aqua
-    '#469496'  // Disco Blue
+    '#0FC0FC', /* Spiro Disco Ball */
+    '#7B1DAF', /* Grape */
+    '#FF2FB9', /* Razzle Dazzle Rose */
+    '#D4FF47', /* Maximum Green Yellow */
+    '#1B3649', /* Space Cadet */ 
+    '#53BE6F' /* Emerald */
 ];
 
-let currentColor = 'black'
+let discoMode = false; // Disco mode is false by default
+
+let defaultColor = 'black' // Default color
 // Function to change the color of a square when hovered over
 function changeSquareColor(event) {
-    event.target.style.backgroundColor = currentColor; // Change the background color of the target (gridContainer) element
+    if (discoMode) {
+        let randomColor = colors[Math.floor(Math.random() * colors.length)]; // Pick a random color from the palette
+        event.target.style.backgroundColor = randomColor; // Change the background color to the random color
+    } 
+    else {
+        event.target.style.backgroundColor = defaultColor; // black
+    }
 }
+
+function toggleDiscoMode() {
+    discoMode = !discoMode; // discoMode = true
+    clearColors();
+}
+
+document.addEventListener("DOMContentLoaded", function() {
+    const gridContainer = document.getElementById("gridContainer");
+    gridContainer.addEventListener('mouseover', changeSquareColor);
+    document.getElementById("discoButton").addEventListener('click', setColoredSquares);
+});
 
 // Function to resize the grid when the button is clicked
 function resizeGrid() {
