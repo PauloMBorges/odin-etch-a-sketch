@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", createGrid);
 
 // Function to change the color of a square when hovered over
 function changeSquareColor(event) {
-    event.target.style.backgroundColor = 'blue'; // Change the background color of the target (gridContainer) element
+    event.target.style.backgroundColor = 'black'; // Change the background color of the target (gridContainer) element
 }
 
 // Function to resize the grid when the button is clicked
