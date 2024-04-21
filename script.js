@@ -24,3 +24,36 @@ document.addEventListener("DOMContentLoaded", createGrid);
 function changeSquareColor(event) {
     event.target.style.backgroundColor = 'blue'; // Change the background color of the target (gridContainer) element
 }
+
+// Function to resize the grid when the button is clicked
+function resizeGrid() {
+    // Asks for the user input (gridSize: numberOfSquares x numberOfSquares)
+    const numberOfSquares = prompt("Enter the number of squares per side for the new grid (maximum: 100): ");
+
+    // Check if the input is valid
+    if (numberOfSquares > 0 && numberOfSquares <= 100 && numberOfSquares !== null && numberOfSquares !== '') {
+        // Calculate the total number of squares
+        const totalNumberOfSquares = numberOfSquares * numberOfSquares;
+        // Calculate the size of each square to fit within the same width (800px)
+        const squareSize = 800 / numberOfSquares;
+
+        const container = document.getElementById("gridContainer");
+        // Clears the existing grid
+        container.innerHTML = '';
+
+        // Generate the new grid
+        for(let i = 0; i < totalNumberOfSquares; i++) {
+            let square = document.createElement("div");
+            square.classList.add("singleSquare");
+            // Changes the square width and height based on the previous calculated number
+            square.style.width = `${squareSize}px`
+            square.style.height = `${squareSize}px`
+            // Appends the squares with recalculated sizes to the grid
+            container.appendChild(square);
+        }
+        
+    } else {
+        // Error message if the input is invalid
+        alert("Please enter a valid number.");
+    }
+}
