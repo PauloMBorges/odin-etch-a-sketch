@@ -4,6 +4,7 @@
     width: 800px; /* 16 squares of 50px */
     justify-content: center;
     align-items: center;
+    background-color: white;
 }
 
 .singleSquare {
@@ -17,7 +18,7 @@
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: center;    
 }
 
 .title {
@@ -27,10 +28,16 @@
     font-family: "Press Start 2P", system-ui;
     font-weight: 400;
     font-style: normal;
+    font-size: 50px;
 }
 
 .container-left {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+body {
+    background-color: #ff007f; /* neon pink */
+    color: white;
 }
