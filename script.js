@@ -14,3 +14,6 @@ function createGrid() {
     }
 }
 
+// Event listener to create the grid when the DOM content is loaded
+document.addEventListener("DOMContentLoaded", createGrid);
+
