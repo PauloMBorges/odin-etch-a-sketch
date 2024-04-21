@@ -56,7 +56,7 @@ function toggleDiscoMode() {
         discoButton.style.backgroundColor = ''; // Revert to original background color
         discoButton.style.color = ''; // Revert to original text color
     }
-    clearColors(); // clear all colors when toggled on or off
+    // clearColors(); // clear all colors when toggled on or off
 }
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -104,3 +104,14 @@ function clearColors() {
         square.style.backgroundColor = '';
     });
 }
+
+// Toggle display grid
+document.addEventListener("DOMContentLoaded", function() {
+    const displayButton = document.getElementById("displayButton");
+    displayButton.addEventListener('click', function() {
+        const squares = document.getElementsByClassName("singleSquare");
+        Array.from(squares).forEach(square => {
+            square.style.setProperty('--border-color', square.style.getPropertyValue('--border-color') === 'transparent' ? 'black' : 'transparent');
+        });
+    })
+})
