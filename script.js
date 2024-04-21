@@ -20,9 +20,10 @@ function createGrid() {
 // Event listener to create the grid when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", createGrid);
 
+let currentColor = 'black'
 // Function to change the color of a square when hovered over
 function changeSquareColor(event) {
-    event.target.style.backgroundColor = 'black'; // Change the background color of the target (gridContainer) element
+    event.target.style.backgroundColor = currentColor; // Change the background color of the target (gridContainer) element
 }
 
 // Function to resize the grid when the button is clicked
