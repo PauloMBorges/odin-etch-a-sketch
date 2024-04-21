@@ -13,12 +13,14 @@ function createGrid() {
         container.appendChild(square);
     }
 
+    // Add a mouseover event listener to the container that triggers changeSquareColor function
     container.addEventListener('mouseover', changeSquareColor);
 }
 
 // Event listener to create the grid when the DOM content is loaded
 document.addEventListener("DOMContentLoaded", createGrid);
 
+// Function to change the color of a square when hovered over
 function changeSquareColor(event) {
-    event.target.style.backgroundColor = 'blue';
+    event.target.style.backgroundColor = 'blue'; // Change the background color of the target (gridContainer) element
 }
