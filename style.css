@@ -27,8 +27,6 @@
 
 .container-left {
     display: flex;
-}
-
-.button {
-    align-self: center;
+    flex-direction: column;
+    justify-content: center;
 }
