@@ -58,7 +58,10 @@ function resizeGrid() {
     }
 }
 
+// Function to reset the squares color
 function clearColors() {
-    const container = document.getElementById("gridContainer");
-    container.innerHTML = ""
+    let squares = document.getElementsByClassName("singleSquare");
+    Array.from(squares).forEach(square => {
+        square.style.backgroundColor = '';
+    });
 }
